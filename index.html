@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Danza De La Muerte</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <!-- Logo -->
+
+        <header>
+            <div class="logo">
+                <a href="#">DYE MUERTE</a>
+            </div>
+        </header>
+
+        <!-- navigation -->
+
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">VIDEOS</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            <img src="/Landing Page 2/moon.png" id="icon">
+        </nav>
+
+    </div>
+
+    <!-- Info and Call to action -->
+    <section>
+        <img src="/Landing Page 2/sukull.svg">
+        <h2>Dance of the Dead</h2>
+        <p>La Danza de la muerte o Danza macabra es un género artístico tardo-medieval cuyo tema era la de la muerte.</p>
+    </section>
+
+    <!-- Call for action -->
+
+    <button>Read More</button>
+
+    <!-- JavaScript for toggle color -->
+
+    <script>
+
+        var icon = document.getElementById("icon");
+
+        if(localStorage.getItem("theme") == null) {
+            localStorage.setItem("theme", "light");
+        };
+
+        let localData = localStorage.getItem("theme");
+
+        if(localData == "light") {
+            icon.src = "landing Page 2/moon.png";
+            document.body.classList.remove("toggle-mode");
+        }
+        else if (localData == "dark") {
+            icon.src = "landing Page 2/sun.png";
+            document.body.classList.add("toggle-mode");
+        };
+
+        icon.onclick = function() {
+            document.body.classList.toggle("toggle-mode");
+            if(document.body.classList.contains("toggle-mode")) {
+                icon.src = "/Landing Page 2/sun.png";
+            } else {
+                icon.src = "/Landing Page 2/moon.png";
+            }
+        };
+
+    </script>
+
+</body>
+</html>
